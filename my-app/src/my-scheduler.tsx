@@ -1,12 +1,13 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useState } from 'react';
 import { BryntumScheduler } from '@bryntum/scheduler-react';
 import { schedulerConfig } from './SchedulerConfig';
 
 export const MyScheduler: FC = () => {
-    const scheduler = useRef<BryntumScheduler>(null);
+    const [scheduler, updateScheduler] = useState<BryntumScheduler>();
+    console.log(scheduler);
     return (
         <BryntumScheduler
-            ref = {scheduler}
+            ref={updateScheduler}
             {...schedulerConfig}
         />
     );
